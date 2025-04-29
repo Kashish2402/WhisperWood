@@ -4,11 +4,11 @@ import {Star, StarHalf} from "lucide-react"
 
 function Testimonials() {
   return (
-    <div className='flex flex-col items-center justify-center gap-8'>
+    <div className='w-full flex flex-col items-center justify-center gap-8'>
       <h1 className='text-4xl font-bold test relative z-10'>Testimonials</h1>
 
-<div className='flex items-center flex-nowrap gap-10'>
-      <div className='bg-[#121212] h-[350px] w-[300px] flex items-center justify-center gap-4 border border-gray-500 rounded-2xl  flex-col py-2 '>
+<div className='w-[80%] flex items-center flex-nowrap gap-10 overflow-x-scroll card'>
+      <div className='bg-[#121212] h-[350px] min-w-[300px] flex items-center justify-center gap-4 border border-gray-500 rounded-2xl  flex-col py-2 '>
         <div className='h-30 w-30 rounded-full overflow-hidden '>
             <img src={Profile1} alt="" />
         </div>
@@ -19,7 +19,7 @@ function Testimonials() {
         </div>
       </div>
 
-      <div className='bg-[#121212] h-[350px] w-[300px] flex items-center justify-center gap-4 border border-gray-500 rounded-2xl  flex-col py-2 '>
+      <div className='bg-[#121212] h-[350px] min-w-[300px] flex items-center justify-center gap-4 border border-gray-500 rounded-2xl  flex-col py-2 '>
         <div className='h-30 w-30 rounded-full overflow-hidden '>
             <img src={Profile2} alt="" />
         </div>
@@ -30,7 +30,7 @@ function Testimonials() {
         </div>
       </div>
 
-      <div className='bg-[#121212] h-[350px] w-[300px] flex items-center justify-center gap-4 border border-gray-500 rounded-2xl  flex-col py-2 '>
+      <div className='bg-[#121212] h-[350px] min-w-[300px] flex items-center justify-center gap-4 border border-gray-500 rounded-2xl  flex-col py-2 '>
         <div className='h-30 w-30 rounded-full overflow-hidden '>
             <img src={Profile3} alt="" />
         </div>
@@ -41,7 +41,7 @@ function Testimonials() {
         </div>
       </div>
 
-      <div className='bg-[#121212] h-[350px] w-[300px] flex items-center justify-center gap-4 border border-gray-500 rounded-2xl  flex-col py-2 '>
+      <div className='bg-[#121212] h-[350px] min-w-[300px] flex items-center justify-center gap-4 border border-gray-500 rounded-2xl  flex-col py-2 '>
         <div className='h-30 w-30 rounded-full overflow-hidden '>
             <img src={Profile4} alt="" />
         </div>

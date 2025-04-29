@@ -7,8 +7,8 @@ function Packages() {
         Packages
       </h1>
 
-      <div className='flex flex-nowrap items-center justify-center gap-10'>
-        <div className='w-[350px] bg-white/10 border border-white/50 py-7 rounded-3xl flex flex-col items-center justify-center '>
+      <div className='flex flex-nowrap items-center lg:justify-center gap-10 w-[80%] overflow-x-scroll card'>
+        <div className='min-w-[350px] bg-white/10 border border-white/50 py-7 rounded-3xl flex flex-col items-center justify-center '>
         <h1 className='text-3xl font-bold '>Cozy Gateway Package</h1>
         <p className='text-sm text-white/50 italic mt-3'>Ideal for Couples / Small Families</p>
 
@@ -45,7 +45,7 @@ function Packages() {
         <button className='w-[90%] mt-4 bg-blue-700  py-2 text-xl  rounded-xl text-white'>Purchase</button>
         </div>
 
-        <div className='w-[350px] bg-white/10 border border-white/50 py-7 rounded-3xl flex flex-col  items-center justify-center '>
+        <div className='min-w-[350px] bg-white/10 border border-white/50 py-7 rounded-3xl flex flex-col  items-center justify-center '>
         <h1 className='text-3xl font-bold '>Friends & Fun Package</h1>
         <p className='text-sm text-white/50 italic mt-3'>Ideal for Small Groups</p>
 
@@ -82,7 +82,7 @@ function Packages() {
         <button className='w-[90%] mt-4 bg-blue-700  py-2 text-xl  rounded-xl text-white'>Purchase</button>
         </div>
 
-        <div className='w-[350px] bg-white/10 border border-white/50 py-7 rounded-3xl flex flex-col items-center justify-center '>
+        <div className='min-w-[350px] bg-white/10 border border-white/50 py-7 rounded-3xl flex flex-col items-center justify-center '>
         <h1 className='text-3xl font-bold '>Nature & Wellness Retreat</h1>
         <p className='text-sm text-white/50 italic mt-3'>Ideal for Solo Travellers / Couples Seeking Relaxation</p>
 
