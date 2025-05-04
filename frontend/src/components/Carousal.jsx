@@ -1,37 +1,66 @@
-import React from "react";
-import { cottage1, cottage2, wooden1 } from "../assets";
-import { TypeAnimation } from "react-type-animation";
+import React, { useEffect, useRef, useState } from "react";
+import Slide1 from "./Carausal/Slide1";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Slide2 from "./Carausal/Slide2";
+import Slide3 from "./Carausal/Slide3";
+
+const slides = [<Slide1 />, <Slide2 />, <Slide3 />];
+
 function Carousal() {
+  const slideRef = useRef();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [fade, setFade] = useState(false);
+  const totalSlides = slides.length;
+  console.log(slideRef);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextButton();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextButton = () => {
+    setFade(true);
+    setTimeout(() => {
+      setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+      setFade(false);
+    }, 100);
+  };
+  const previousButton = () => {
+    setFade(true);
+    setTimeout(() => {
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+      setFade(false);
+    }, 100);
+  };
   return (
-    <div className="h-[800px] w-full relative z-10 flex items-center overflow-x-hidden ">
-        <div className="h-full w-full absolute -z-0 wood">
-        <img src={wooden1} className="h-full w-full absolute top-0  left-0 -z-0 " alt="" />
-        </div>
+    <div className="h-[100vh] w-[100%] relative overflow-hidden ">
+      {/* LEFT SLIDER BUTTON && RIGHT SLIDER BUTTON*/}
 
-        <div className="w-full flex items-center justify-center z-10 md:px-10 flex-col md:flex-row gap-10 md:gap-0">
-            <div className="w-full md:w-1/2 order-2 md:order-1 flex flex-col items-center md:items-start">
-            <div className="h-[120px] text-4xl font-bold">
-            <TypeAnimation
-                sequence={[
-                    "StayCay in Our Cottage...",2000,
-                    "Your Private Retreat Awaits...",2000
-                ]}
-                className="w-[300px]"
-                wrapper="div"
-                speed={50}
-                repeat={Infinity}
-                />
-            </div>
-                <button className="px-6 rounded-3xl font-semibold cursor-pointer hover:scale-105 py-2 bg-white text-black">Book Now</button>
-            </div>
-
-            <div className="w-full md:w-1/2 order-1 md:order-2 flex flex-col items-center ">
-                <div className="w-[300px] h-[350px] md:w-[400px] md:h-[500px] lg:h-[600px] lg:w-[500px] -rotate-10 rounded-2xl bg-white/70 px-10 py-8">
-                <img src={cottage1} alt="" className="w-full h-full rounded-2xl"/>
-                </div>
-            </div>
+      <div
+        className="absolute z-100 top-[40%] left-0 text-white h-52 px-2 hover:bg-black/30 cursor-pointer flex items-center justify-center"
+        onClick={previousButton}
+      >
+        <ChevronLeft size={32} />
+      </div>
+      <div
+        className="absolute z-100 top-[40%] right-0 text-white h-52 px-2 hover:bg-black/30 cursor-pointer flex items-center justify-center"
+        onClick={nextButton}
+      >
+        <ChevronRight size={32} />
+      </div>
+      <div className="w-full h-full overflow-x-auto">
+        <div
+          className={`flex flex-nowrap w-full h-full overflow-x-auto transition-opacity duration-300 ease-in-out  ${
+            fade ? "opacity-0" : "opacity-100"
+          }`}
+          ref={slideRef}
+        >
+          {slides[currentSlide]}
         </div>
-      
+      </div>
     </div>
   );
 }

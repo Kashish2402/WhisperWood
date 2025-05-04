@@ -10,10 +10,7 @@ function Home() {
   return (
     <div className='w-full flex flex-col gap-14'>
       <Carousal/>
-      <CottageCard/>
-      <Testimonials/>
-      <Packages/>
-      <Contact/>
+      
       <Footer/>
     </div>
   )

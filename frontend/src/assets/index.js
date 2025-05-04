@@ -11,6 +11,8 @@ import Profile1 from "./Profile1.jpg"
 import Profile2 from "./Profile2.png"
 import Profile3 from "./Profile3.jpg"
 import Profile4 from "./Profile4.avif"
+import Slider2 from "./Slider2.jpg"
+import Slider3 from "./Slider3.jpg"
 
 export{
     wooden1,
@@ -25,5 +27,7 @@ export{
     Profile1,
     Profile2,
     Profile3,
-    Profile4
+    Profile4,
+    Slider2,
+    Slider3
 }

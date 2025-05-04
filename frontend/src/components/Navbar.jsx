@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
   
   return (
-    <div className="fixed top-0 left-0 w-full border-b border-gray-500/50 shadow-2xl px-5 py-7 flex justify-center gap-4  md:justify-between  items-center flex-wrap z-100 bg-black">
+    <div className="fixed top-0 left-0 w-full border-b border-gray-500/50 shadow-2xl px-5 py-7 flex justify-center gap-4  md:justify-between  items-center flex-wrap z-100" style={{backgroundImage:"linear-gradient(270deg,#121212, transparent,#080808)"}}>
       {/* LOGO */}
       <div
         className='[font-family:"Lobster_Two",cursive] relative cursor-pointer'
